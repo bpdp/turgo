@@ -1,26 +1,67 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package name.bpdp.turgo.core;
 
-import org.eclipse.jetty.server.Server;
+//import org.eclipse.jetty.server.Server;
+
+import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.Channel;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
- *
- * @author bpdp
+ * Created by bpdp on 4/5/14.
  */
+
 public class TurgoServer {
 
-    public static void main(String[] args) throws Exception {
-            
-        Server server = new Server(8080);
-    
-        server.start();
-        server.join();
-    
+    private final int port;
+
+    public TurgoServer(int port) {
+        this.port = port;
     }
-    
+
+    public void run() throws Exception {
+
+        // Configure the server.
+
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+
+        try {
+            ServerBootstrap b = new ServerBootstrap();
+            b.group(bossGroup, workerGroup)
+             .channel(NioServerSocketChannel.class)
+             .childHandler(new TurgoServerInitializer());
+
+            Channel ch = b.bind(port).sync().channel();
+            ch.closeFuture().sync();
+
+        } finally {
+
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
+
+        }
+
+    }
+
+
+    public static void main(String[] args) throws Exception {
+
+        int port;
+
+        if (args.length > 0) {
+
+            port = Integer.parseInt(args[0]);
+
+        } else {
+
+            port = 8080;
+
+        }
+
+        new TurgoServer(port).run();
+
+    }
+
 }
