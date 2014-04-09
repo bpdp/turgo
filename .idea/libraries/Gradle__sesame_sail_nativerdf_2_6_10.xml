@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: sesame-sail-nativerdf-2.6.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-sail-nativerdf/2.6.10/36bea5ac5ea0acc796db5bd699e7afc6ea9b8197/sesame-sail-nativerdf-2.6.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-sail-nativerdf/2.6.10/3e86ba3afc0d9562595ddb4def1a3d4a2cffa076/sesame-sail-nativerdf-2.6.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

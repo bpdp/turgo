@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: openrdf-sesame-onejar-osgi-2.1.1">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/openrdf/openrdf-sesame-onejar-osgi/2.1.1/openrdf-sesame-onejar-osgi-2.1.1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
