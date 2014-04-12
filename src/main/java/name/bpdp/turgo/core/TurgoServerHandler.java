@@ -1,3 +1,10 @@
+/**
+ * Frontend of Turgo
+ * <p>
+ *     @author bpdp
+ *     @version 0.0.1-BETA
+ */
+
 package name.bpdp.turgo.core;
 
 import io.netty.buffer.ByteBuf;

@@ -12,12 +12,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Gradle: rythm-engine-1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: ecj-4.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: pat-1.5.3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-lang3-3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: fastjson-1.1.37" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: mvel2-2.1.5.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit-4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-core-1.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: netty-all-5.0.0.Alpha1" level="project" />
@@ -88,6 +82,9 @@
     <orderEntry type="library" exported="" name="Gradle: htmllexer-2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: htmlparser-2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: nxparser-1.2.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: thymeleaf-2.1.2.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: ognl-3.0.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javassist-3.16.1-GA" level="project" />
   </component>
 </module>
 

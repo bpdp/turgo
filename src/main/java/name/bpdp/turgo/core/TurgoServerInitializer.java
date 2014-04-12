@@ -1,3 +1,10 @@
+/**
+ * Turgo initializer
+ * <p>
+ *     @author bpdp
+ *     @version 0.0.1-BETA
+ */
+
 package name.bpdp.turgo.core;
 
 /**
