@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.springsource.slf4j.log4j-1.5.6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/com.springsource.slf4j.log4j/1.5.6/com.springsource.slf4j.log4j-1.5.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
