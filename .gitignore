@@ -7,6 +7,7 @@
 .yardopts
 bin
 build
+lib
 target
 test-output
 Scratch.java
@@ -14,3 +15,5 @@ ScratchTest.java
 test-results
 test-tmp
 *.class
+.nb-gradle
+/.nb-gradle/private/

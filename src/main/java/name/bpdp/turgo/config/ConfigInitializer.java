@@ -16,13 +16,18 @@ public class ConfigInitializer {
 
 		File turgoConf = new File("conf/turgo.json");
  
-	  if(turgoConf.exists()){
-			return true;
-	  } else {
+        if (turgoConf.exists()){
+		    return true;
+        } else {
 			return false;
-	  }	
+	    }
 
 	}
 
+    public String getConfig(String key) {
+
+        return "Wasu";
+
+    }
 
 }

@@ -7,13 +7,15 @@
 
 package name.bpdp.turgo.core;
 
-//import org.eclipse.jetty.server.Server;
+import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.http.server.Request;
+import org.glassfish.grizzly.http.server.Response;
+import org.glassfish.grizzly.http.server.NetworkListener;
+import org.glassfish.grizzly.http.server.HttpHandler;
 
-import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 /**
  * Created by bpdp on 4/5/14.
@@ -21,35 +23,44 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class TurgoServer {
 
-    private final int port;
+	private final int port;
 
-    public TurgoServer(int port) {
-        this.port = port;
-    }
+  public TurgoServer(int port) {
+    this.port = port;
+  }
 
-    public void run() throws Exception {
+  public void run() throws Exception {
 
-        // Configure the server.
-
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
-
-        try {
-            ServerBootstrap b = new ServerBootstrap();
-            b.group(bossGroup, workerGroup)
-             .channel(NioServerSocketChannel.class)
-             .childHandler(new TurgoServerInitializer());
-
-            Channel ch = b.bind(port).sync().channel();
-            ch.closeFuture().sync();
-
-        } finally {
-
-            bossGroup.shutdownGracefully();
-            workerGroup.shutdownGracefully();
-
+		HttpServer httpServer = new HttpServer();
+        
+		NetworkListener networkListener = new NetworkListener("sample-listener", "localhost", this.port);
+		httpServer.addListener(networkListener);
+        
+		httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
+    
+			final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+            
+	    @Override
+  	  public void service(Request request, Response response) throws Exception {
+        final Date now = new Date();
+        final String formattedTime;
+        synchronized (formatter) {
+            formattedTime = formatter.format(now);
         }
+                
+        response.setContentType("text/plain");
+        response.getWriter().write(formattedTime);
+    	}
+		}, "/time");
 
-    }
+		try {
+    	httpServer.start();
+	    System.out.println("Press any key to stop the server...");
+	    System.in.read();
+		} catch (Exception e) {
+	    System.err.println(e);
+		}
+
+	}
 
 }
