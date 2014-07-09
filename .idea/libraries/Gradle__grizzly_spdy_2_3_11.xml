@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: grizzly-spdy-2.3.11">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.grizzly/grizzly-spdy/2.3.11/5b4df41621edf67e72e6ebb530423959bb2254fd/grizzly-spdy-2.3.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.grizzly/grizzly-spdy/2.3.11/75a0ea2d3734726735e3c24bd7393290564e7727/grizzly-spdy-2.3.11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

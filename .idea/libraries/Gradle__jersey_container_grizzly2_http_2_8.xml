@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: jersey-container-grizzly2-http-2.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-grizzly2-http/2.8/490c704bccd3952312e25f6d5618bf9117614fe2/jersey-container-grizzly2-http-2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-grizzly2-http/2.8/67d4c5387af4df290354bb21e3d47e664af160ab/jersey-container-grizzly2-http-2.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: sesame-http-client-2.7.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-http-client/2.7.10/208faacfbc2061778bf3c3beccedca277e69f9e2/sesame-http-client-2.7.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-http-client/2.7.10/65597cb764f3833d78c7d8566354b648a4a9fa0e/sesame-http-client-2.7.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: sesame-rio-binary-2.7.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-rio-binary/2.7.10/da33fc8b7dca15b456eb86bc33af34610a88d2d0/sesame-rio-binary-2.7.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-rio-binary/2.7.10/26d826f7812326ab958e6e53462977fef27dd0dc/sesame-rio-binary-2.7.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

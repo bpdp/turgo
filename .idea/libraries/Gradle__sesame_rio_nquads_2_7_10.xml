@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: sesame-rio-nquads-2.7.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-rio-nquads/2.7.10/13b079d0d47ed2b646b5c5b3143e940f00021c13/sesame-rio-nquads-2.7.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-rio-nquads/2.7.10/2c9422e4d84b354ecbadc326ae682b53c233256c/sesame-rio-nquads-2.7.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

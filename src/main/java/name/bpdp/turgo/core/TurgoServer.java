@@ -25,40 +25,42 @@ public class TurgoServer {
 
 	private final int port;
 
-  public TurgoServer(int port) {
+    public TurgoServer(int port) {
     this.port = port;
   }
 
-  public void run() throws Exception {
+    public void run() throws Exception {
 
-		HttpServer httpServer = new HttpServer();
+	    HttpServer httpServer = new HttpServer();
         
 		NetworkListener networkListener = new NetworkListener("sample-listener", "localhost", this.port);
 		httpServer.addListener(networkListener);
         
 		httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
     
-			final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+		    final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             
-	    @Override
-  	  public void service(Request request, Response response) throws Exception {
-        final Date now = new Date();
-        final String formattedTime;
-        synchronized (formatter) {
-            formattedTime = formatter.format(now);
-        }
+	        @Override
+  	        public void service(Request request, Response response) throws Exception {
+
+                final Date now = new Date();
+                final String formattedTime;
+                synchronized (formatter) {
+                    formattedTime = formatter.format(now);
+                }
                 
-        response.setContentType("text/plain");
-        response.getWriter().write(formattedTime);
-    	}
+                response.setContentType("text/plain");
+                response.getWriter().write(formattedTime);
+    	    }
 		}, "/time");
 
 		try {
-    	httpServer.start();
-	    System.out.println("Press any key to stop the server...");
-	    System.in.read();
-		} catch (Exception e) {
-	    System.err.println(e);
+    	    httpServer.start();
+					Thread.currentThread().join();
+	        //System.out.println("Press any key to stop the server...");
+	        //System.in.read();
+        } catch (Exception e) {
+	        System.err.println(e);
 		}
 
 	}
