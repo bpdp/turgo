@@ -25,15 +25,17 @@ public class TurgoServer {
 
 	private final int port;
 
-    public TurgoServer(int port) {
-    this.port = port;
-  }
+	public TurgoServer(int port) {
+		
+		this.port = port;
+		
+	}
 
     public void run() throws Exception {
 
 	    HttpServer httpServer = new HttpServer();
         
-		NetworkListener networkListener = new NetworkListener("sample-listener", "localhost", this.port);
+		NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
 		httpServer.addListener(networkListener);
         
 		httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
@@ -55,12 +57,14 @@ public class TurgoServer {
 		}, "/time");
 
 		try {
+
     	    httpServer.start();
-					Thread.currentThread().join();
-	        //System.out.println("Press any key to stop the server...");
-	        //System.in.read();
+			Thread.currentThread().join();
+
         } catch (Exception e) {
+
 	        System.err.println(e);
+
 		}
 
 	}

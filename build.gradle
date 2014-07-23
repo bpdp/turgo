@@ -1,13 +1,14 @@
 apply plugin: 'java'
-//apply plugin: 'application'
 apply plugin: 'maven'
 
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-//mainClassName = 'name.bpdp.turgo.core.TurgoServer'
-
 repositories {
+
+	flatDir {
+    	dirs 'libs'
+	}
 
     mavenLocal()
     mavenCentral()
@@ -53,11 +54,11 @@ dependencies {
     //    compile group: 'org.rythmengine', name: 'rythm-engine', version: '1.0'
 
     // grizzly, I put all http component here
-    compile group: 'org.glassfish.grizzly', name: 'grizzly-http-all', version: '2.3.11'
+    compile group: 'org.glassfish.grizzly', name: 'grizzly-http-all', version: '2.3.14'
 
     // jersey - RESTful Web API, with grizzly integration
     // used as the door for communication with software agent
-    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.8'
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.10.1'
 
     compile group: 'javax.json', name: 'javax.json-api', version: '1.0'
 
@@ -76,9 +77,11 @@ dependencies {
 
     compile group: 'com.bigdata', name: 'bigdata', version: '1.3.1'
 
+	compile name: 'tuprolog-2.9.0'
+
     //  You can read more about how to add dependency here:
     //  http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
-    testCompile group: 'junit', name: 'junit', version: '4.10'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
 
 }
 
