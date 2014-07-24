@@ -1,4 +1,4 @@
-apply plugin: 'java'
+a1`pply plugin: 'java'
 apply plugin: 'maven'
 
 sourceCompatibility = '1.8'
@@ -7,128 +7,127 @@ sourceCompatibility = '1.8'
 repositories {
 
 	flatDir {
-    	dirs 'libs'
+        dirs 'libs'
 	}
 
-    mavenLocal()
-    mavenCentral()
+	mavenLocal()
+	mavenCentral()
 
-    // You may define additional repositories, or even remove "mavenCentral()".
-    // Read more about repositories here:
-    //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
+	// You may define additional repositories, or even remove "mavenCentral()".
+	// Read more about repositories here:
+	//   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
 
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 
-    // maven repo for Prova
-    maven { url "https://prova.ws/maven2" }
-    // maven repo for Prova dependencies com.springsource.*
-    maven { url "http://repository.springsource.com/maven/bundles/release" }
-    maven { url "http://repository.springsource.com/maven/bundles/external" }
-    // maven repo for Prova dependencies: openrdf-sesame-onejar-osgi
-    maven { url "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" }
+	// maven repo for Prova
+	maven { url "https://prova.ws/maven2" }
+	// maven repo for Prova dependencies com.springsource.*
+	maven { url "http://repository.springsource.com/maven/bundles/release" }
+	maven { url "http://repository.springsource.com/maven/bundles/external" }
+	// maven repo for Prova dependencies: openrdf-sesame-onejar-osgi
+	maven { url "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" }
 
-    maven { url "http://fortytwo.net/maven2" }
+	maven { url "http://fortytwo.net/maven2" }
 
-    // maven repo for BigData - as embedded RDF database
-    // we are looking for BigData with Blueprints also
-    // needed by BigData: nxparser
-    maven { url "http://nxparser.googlecode.com/svn/repository" }
-    maven { url "http://www.systap.com/maven/releases" }
+	// maven repo for BigData - as embedded RDF database
+	// we are looking for BigData with Blueprints also
+	// needed by BigData: nxparser
+	maven { url "http://nxparser.googlecode.com/svn/repository" }
+	maven { url "http://www.systap.com/maven/releases" }
 
-    // maven repo for Jade
-    //maven { url "http://jade.tilab.com/maven/" }
+	// maven repo for Jade
+	//maven { url "http://jade.tilab.com/maven/" }
 
 }
 
 dependencies {
 
-    //  compile => for compile time deps
-    //  testCompile => for test time deps
-    //  provided => assumed to be provided by users
+	//  compile => for compile time deps
+	//  testCompile => for test time deps
+	//  provided => assumed to be provided by users
 
-    //  compile 'org.eclipse.jetty:jetty-server:9.1.3.v20140225'
+	//  compile 'org.eclipse.jetty:jetty-server:9.1.3.v20140225'
 
-    //  compile group: 'com.tilab.jade', name: 'jade', version: '4.3.2'
-    compile group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha1'
-    compile group: 'ws.prova', name: 'ws.prova.compact', version: '3.2.1'
-    //    compile group: 'org.rythmengine', name: 'rythm-engine', version: '1.0'
+	//  compile group: 'com.tilab.jade', name: 'jade', version: '4.3.2'
+	compile group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha1'
+	compile group: 'ws.prova', name: 'ws.prova.compact', version: '3.2.1'
+	// compile group: 'org.rythmengine', name: 'rythm-engine', version: '1.0'
 
-    // grizzly, I put all http component here
-    compile group: 'org.glassfish.grizzly', name: 'grizzly-http-all', version: '2.3.14'
+	// grizzly, I put all http component here
+	compile group: 'org.glassfish.grizzly', name: 'grizzly-http-all', version: '2.3.14'
 
-    // jersey - RESTful Web API, with grizzly integration
-    // used as the door for communication with software agent
-    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.10.1'
+	// jersey - RESTful Web API, with grizzly integration
+	// used as the door for communication with software agent
+	compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.10.1'
 
-    compile group: 'javax.json', name: 'javax.json-api', version: '1.0'
+	compile group: 'javax.json', name: 'javax.json-api', version: '1.0'
 
-    compile group: 'org.thymeleaf', name: 'thymeleaf', version: '2.1.3.RELEASE'
+	compile group: 'org.thymeleaf', name: 'thymeleaf', version: '2.1.3.RELEASE'
 
 	// these are all for OrientDB:
 	//compile group: 'com.orientechnologies', name: 'orient-commons', version: '1.7-rc2'
-    //compile group: 'com.orientechnologies', name: 'orientdb-core', version: '1.7-rc2'
+	//compile group: 'com.orientechnologies', name: 'orientdb-core', version: '1.7-rc2'
 	//compile group: 'com.orientechnologies', name: 'orientdb-graphdb', version: '1.7-rc2'
 	//compile group: 'com.orientechnologies', name: 'orientdb-client', version: '1.7-rc2'
-
+    
 	// Blueprints
 	compile group: 'com.tinkerpop.blueprints', name: 'blueprints-core', version: '2.5.0'
 	compile group: 'com.tinkerpop.blueprints', name: 'blueprints-sail-graph', version: '2.5.0'
 	compile group: 'com.tinkerpop.blueprints', name: 'blueprints-graph-sail', version: '2.5.0'
 
-    compile group: 'com.bigdata', name: 'bigdata', version: '1.3.1'
+	compile group: 'com.bigdata', name: 'bigdata', version: '1.3.1'
 
 	compile name: 'tuprolog-2.9.0'
 
-    //  You can read more about how to add dependency here:
-    //  http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+	//  You can read more about how to add dependency here:
+	//  http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
+	testCompile group: 'junit', name: 'junit', version: '4.11'
 
 }
 
 test {
-    /* Configure which tests are included
-    include 'org/foo/**'
-    exclude 'org/boo/**'
-    */
-    maxParallelForks = 5
-    maxHeapSize = '1024m'
+	/* Configure which tests are included
+	include 'org/foo/**'
+	exclude 'org/boo/**'
+	*/
+	maxParallelForks = 5
+	maxHeapSize = '1024m'
 
 }
 
 configure(install.repositories.mavenInstaller) {
-    pom.project {
-        groupId 'name.bpdp'
-        artifactId 'turgo'
-        inceptionYear '2014'
-        packaging 'jar'
-        licenses {
-            license {
-                name 'Eclipse Public License (Version 1.0)'
-                url 'http://www.eclipse.org/legal/epl-v10.html'
-                distribution 'repo'
-            }
-        }
-    }
+	pom.project {
+		groupId 'name.bpdp'
+		artifactId 'turgo'
+		inceptionYear '2014'
+		packaging 'jar'
+		licenses {
+			license {
+				name 'Eclipse Public License (Version 1.0)'
+				url 'http://www.eclipse.org/legal/epl-v10.html'
+				distribution 'repo'
+			}
+		}
+	}
 }
 
 task sourcesJar(type: Jar, dependsOn:classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+	classifier = 'sources'
+	from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar, dependsOn:javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
+	classifier = 'javadoc'
+	from javadoc.destinationDir
 }
 
 artifacts {
-    archives sourcesJar
-    archives javadocJar
+	archives sourcesJar
+	archives javadocJar
 }
 
 // copy all needed jar after gradle build
 task copyToLib(type: Copy) {
-  into "lib"
-  from configurations.runtime
+	into "lib"
+	from configurations.runtime
 }
-
