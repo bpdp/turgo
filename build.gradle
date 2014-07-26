@@ -18,15 +18,6 @@ repositories {
 	//   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
 
 	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-
-	// maven repo for Prova
-	maven { url "https://prova.ws/maven2" }
-	// maven repo for Prova dependencies com.springsource.*
-	maven { url "http://repository.springsource.com/maven/bundles/release" }
-	maven { url "http://repository.springsource.com/maven/bundles/external" }
-	// maven repo for Prova dependencies: openrdf-sesame-onejar-osgi
-	maven { url "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" }
-
 	maven { url "http://fortytwo.net/maven2" }
 
 	// maven repo for BigData - as embedded RDF database
@@ -46,13 +37,6 @@ dependencies {
 	//  testCompile => for test time deps
 	//  provided => assumed to be provided by users
 
-	//  compile 'org.eclipse.jetty:jetty-server:9.1.3.v20140225'
-
-	//  compile group: 'com.tilab.jade', name: 'jade', version: '4.3.2'
-	compile group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha1'
-	compile group: 'ws.prova', name: 'ws.prova.compact', version: '3.2.1'
-	// compile group: 'org.rythmengine', name: 'rythm-engine', version: '1.0'
-
 	// grizzly, I put all http component here
 	compile group: 'org.glassfish.grizzly', name: 'grizzly-http-all', version: '2.3.14'
 
@@ -63,12 +47,6 @@ dependencies {
 	compile group: 'javax.json', name: 'javax.json-api', version: '1.0'
 
 	compile group: 'org.thymeleaf', name: 'thymeleaf', version: '2.1.3.RELEASE'
-
-	// these are all for OrientDB:
-	//compile group: 'com.orientechnologies', name: 'orient-commons', version: '1.7-rc2'
-	//compile group: 'com.orientechnologies', name: 'orientdb-core', version: '1.7-rc2'
-	//compile group: 'com.orientechnologies', name: 'orientdb-graphdb', version: '1.7-rc2'
-	//compile group: 'com.orientechnologies', name: 'orientdb-client', version: '1.7-rc2'
     
 	// Blueprints
 	compile group: 'com.tinkerpop.blueprints', name: 'blueprints-core', version: '2.5.0'
@@ -103,8 +81,8 @@ configure(install.repositories.mavenInstaller) {
 		packaging 'jar'
 		licenses {
 			license {
-				name 'Eclipse Public License (Version 1.0)'
-				url 'http://www.eclipse.org/legal/epl-v10.html'
+				name 'Apache License (Version 2.0)'
+				url 'http://www.apache.org/licenses/LICENSE-2.0'
 				distribution 'repo'
 			}
 		}
