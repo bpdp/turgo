@@ -1,0 +1,11 @@
+ {
+     "projectName": "Hello Turgo",
+     "author" : {
+         "name": "Bambang Purnomosidi D. P.",
+         "eMail": "bpurnomo@akakom.ac.id"
+     },
+     "database": [
+         { "type": "blueprints", "host": "localhost", "dbname": "helloBlueprints", "user": "bpdp", "pass": "123" },
+         { "type": "document", "host": "localhost", "dbname": "helloDocument", "user": "bpdp", "pass": "123" }
+     ]
+ }
