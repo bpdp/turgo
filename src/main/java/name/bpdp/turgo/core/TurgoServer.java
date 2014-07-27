@@ -22,50 +22,54 @@ import java.text.SimpleDateFormat;
 
 public class TurgoServer {
 
-	private final int port;
+    private final int port;
 
-	public TurgoServer(int port) {
+    public TurgoServer(int port) {
 		
-		this.port = port;
+        this.port = port;
 		
-	}
+    }
 
-	public void run() throws Exception {
+    public void run() throws Exception {
 
-		HttpServer httpServer = new HttpServer();
+        HttpServer httpServer = new HttpServer();
         
-		NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
-		httpServer.addListener(networkListener);
+        NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
+		
+        httpServer.addListener(networkListener);
         
-		httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
+	httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
     
-			final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+            final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             
-			@Override
-			public void service(Request request, Response response) throws Exception {
+            @Override
+            public void service(Request request, Response response) throws Exception {
 
-				final Date now = new Date();
-				final String formattedTime;
-				synchronized (formatter) {
-					formattedTime = formatter.format(now);
-				}
+                final Date now = new Date();
+                final String formattedTime;
+                
+                synchronized (formatter) {
+                    formattedTime = formatter.format(now);
+                }
 
-				response.setContentType("text/plain");
-				response.getWriter().write(formattedTime);
-			}
-		}, "/time");
+		response.setContentType("text/plain");
+		response.getWriter().write(formattedTime);
+	
+            }
+	
+        }, "/time");
 
-		try {
+        try {
 
-			httpServer.start();
-			Thread.currentThread().join();
+            httpServer.start();
+            Thread.currentThread().join();
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			System.err.println(e);
+            System.err.println(e);
 
-		}
+        }
 
-	}
+    }
 
 }
