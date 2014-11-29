@@ -13,6 +13,9 @@ import org.glassfish.grizzly.http.server.Response;
 import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.grizzly.spdy.SpdyAddOn;
+import org.glassfish.grizzly.ssl.SSLEngineConfigurator;
+import org.glassfish.grizzly.ssl.SSLContextConfigurator;
+
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -34,7 +37,14 @@ public class TurgoServer {
         HttpServer httpServer = new HttpServer();
         NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
         networkListener.setSecure(true);
-        //networkListener.setSSLEngineConfig();
+
+        SSLContextConfigurator sslConf = new SSLContextConfigurator();
+        sslConf.setKeyStoreFile("keys/keystore_server");
+        sslConf.setKeyStorePass("asdfgh");
+        sslConf.setTrustStoreFile("keys/truststore_server");
+        sslConf.setTrustStorePass("asdfgh");
+
+        networkListener.setSSLEngineConfig(new SSLEngineConfigurator(sslConf));
 
         SpdyAddOn spdyAddOn = new SpdyAddOn();
         networkListener.registerAddOn(spdyAddOn);
