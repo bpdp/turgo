@@ -10,8 +10,10 @@ mainClassName = 'turgo.examples.hello.HelloTurgo'
 // run it with: gradle run -Pargs="4000"
 // where 4000 is the port, see also the source code.
 
+applicationDefaultJvmArgs = ["-Xbootclasspath/p:./lib/alpn-boot-${alpnBootVersion}.jar"]
+
 run {
-	if(project.hasProperty('args'))
+	if(project.hasProperty('args')) {
         args project.args.split('\\s+')
     }
 
@@ -34,6 +36,10 @@ repositories {
 
 dependencies {
     compile 'name.bpdp:turgo:0.0.1.Beta1'
-    compile 'tuprolog-2.9.1'
+    compile 'alice.tuprolog:tuprolog:2.9.1'
     testCompile 'junit:junit:4.11'
+
+    // for JSON, see: https://jsonp.java.net/download.html
+    compile 'org.glassfish:javax.json:1.0.4'
+
 }

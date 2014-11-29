@@ -1,5 +1,6 @@
  {
      "projectName": "Hello Turgo",
+     "port" : "8080",
      "author" : {
          "name": "Bambang Purnomosidi D. P.",
          "eMail": "bpurnomo@akakom.ac.id"

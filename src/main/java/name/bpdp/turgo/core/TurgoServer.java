@@ -12,6 +12,7 @@ import org.glassfish.grizzly.http.server.Request;
 import org.glassfish.grizzly.http.server.Response;
 import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.HttpHandler;
+import org.glassfish.grizzly.spdy.SpdyAddOn;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -32,6 +33,12 @@ public class TurgoServer {
 
         HttpServer httpServer = new HttpServer();
         NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
+        networkListener.setSecure(true);
+        //networkListener.setSSLEngineConfig();
+
+        SpdyAddOn spdyAddOn = new SpdyAddOn();
+        networkListener.registerAddOn(spdyAddOn);
+
         httpServer.addListener(networkListener);
 	    httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
     

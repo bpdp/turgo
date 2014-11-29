@@ -1,7 +1,8 @@
 package turgo.examples.hello;
 
+import name.bpdp.turgo.config.TurgoConfig;
 import name.bpdp.turgo.core.*;
-import name.bpdp.turgo.config.ConfigInitializer;
+import name.bpdp.turgo.config.*;
 
 import alice.tuprolog.*;
 
@@ -18,7 +19,7 @@ public class HelloTurgo {
 
 		SolveInfo info = engine.solve("append([1],[2,3],X).");
 
-		ConfigInitializer turgoConf = new ConfigInitializer();
+		TurgoConfig turgoConf = new TurgoConfig();
 
 		if (args.length > 0) {
 
@@ -26,7 +27,7 @@ public class HelloTurgo {
 
 		} else {
 
-			port = 8080;
+			port = Integer.parseInt(turgoConf.getValue("port"));
 
 		}
 
