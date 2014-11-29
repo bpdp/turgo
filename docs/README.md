@@ -1,8 +1,6 @@
-Turgo Documentation
-===================
+# Turgo Documentation
 
-Contents
---------
+# Contents
 * Introduction
 	*	The Pragmatic Web System
 	*	Architecture of Pragmatic Web Application
@@ -11,7 +9,6 @@ Contents
 	*	Complete Features
 	*	Javadoc API
 
-Author
-======
+# Author
 
 [Bambang Purnomosidi D. P.](http://bpdp.name)

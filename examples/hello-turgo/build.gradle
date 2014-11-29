@@ -11,17 +11,17 @@ mainClassName = 'turgo.examples.hello.HelloTurgo'
 // where 4000 is the port, see also the source code.
 
 run {
-	if(project.hasProperty('args')){
-		args project.args.split('\\s+')
-	}
+	if(project.hasProperty('args'))
+        args project.args.split('\\s+')
+    }
 
 }
 
 repositories {
 
-	flatDir {
-    	dirs 'lib'
-	}
+    flatDir {
+        dirs 'lib'
+    }
 
     mavenLocal()
     mavenCentral()
@@ -34,6 +34,6 @@ repositories {
 
 dependencies {
     compile 'name.bpdp:turgo:0.0.1.Beta1'
-	compile 'tuprolog-2.9.1'
+    compile 'tuprolog-2.9.1'
     testCompile 'junit:junit:4.11'
 }

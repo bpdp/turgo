@@ -102,3 +102,6 @@ task copyToLib(type: Copy) {
 	into "lib"
 	from configurations.runtime
 }
+
+// see https://github.com/halvards/spdylab/blob/master/jetty/build.gradle
+// for SPD example
