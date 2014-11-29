@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.jsonld-java:jsonld-java-sesame:0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jsonld-java/jsonld-java-sesame/0.3/e2b02acf5d56fde90015dfbb56c307dfae090965/jsonld-java-sesame-0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jsonld-java/jsonld-java-sesame/0.3/8e3c61a9216524e9231ff8e3679b05c765553502/jsonld-java-sesame-0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

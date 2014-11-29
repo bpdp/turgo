@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openrdf.sesame:sesame-queryresultio-sparqlxml:2.7.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-queryresultio-sparqlxml/2.7.10/a8581e4f9f49d43c2fb83882452dc61938feab8d/sesame-queryresultio-sparqlxml-2.7.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openrdf.sesame/sesame-queryresultio-sparqlxml/2.7.10/291ad5e629b0abf2050f52c7f2c78324a8fab49c/sesame-queryresultio-sparqlxml-2.7.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

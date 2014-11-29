@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tinkerpop.blueprints:blueprints-graph-sail:2.5.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinkerpop.blueprints/blueprints-graph-sail/2.5.0/5c00d07cbd1e8ad919587509ad5129d7eef4e469/blueprints-graph-sail-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinkerpop.blueprints/blueprints-graph-sail/2.5.0/27a0c22e1340ff2febb869952cb50c5075598b5c/blueprints-graph-sail-2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

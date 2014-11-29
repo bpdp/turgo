@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tinkerpop.blueprints:blueprints-core:2.5.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tinkerpop/blueprints/blueprints-core/2.5.0/blueprints-core-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

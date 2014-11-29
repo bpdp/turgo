@@ -1,19 +1,16 @@
-Turgo Project
-=============
+# Turgo Project
 
 ![Turgo Logo](images/logo3.png)
 This project is meant to create a Pragmatic Web framework. It is the result of author's dissertation. As the dissertation is still in progress, in the meantime this framework is **very much unstable** and there's no documentation. This will surely be completed as time goes by.
 
-The Software
-============
+# The Software
 
-Build
------
+## Build
 
-This project uses [Gradle](http://www.gradle.org). All of files needed by Gradle reside in `build.gradle` and `gradle` directory.
+This project uses [Gradle](http://www.gradle.org). All of files needed by Gradle reside in `build.gradle`, `settings.gradle`, and `gradle.properties` files.
 
-License
--------
+## License
+
 ~~~
 Copyright 2014, Bambang Purnomosidi D. P.
 
@@ -30,15 +27,17 @@ Copyright 2014, Bambang Purnomosidi D. P.
    limitations under the License.
 ~~~
 
-Author
-======
+## Documentation
+
+Available in [documentation directory](docs/README.md)
+
+# Author
 
 The author ([Bambang Purnomosidi D. P.](http://bpdp.name)) is Ph.D candidate in [Electrical Engineering and Information Technology](http://pasca.te.ugm.ac.id), [Faculty of Engineering](http://www.fakultas-teknik.ugm.ac.id), [Gadjah Mada University](http://www.ugm.ac.id). He can be contacted by:
 * Email: bambangpdp-with-domain-name-yahoocom-or-gmailcom
 * Facebook: [/bambangpdp](http://www.facebook.com/bambangpdp)
 * Twitter: [@bpdp](http://twitter.com/bpdp)
 
-Some notes
-==========
+# Some notes
 
-* [tuprolog](http://tuprolog.alice.unibo.it) is not available in Maven repository, so you have to grab them manually and then put the jar inside libs dir (see build.gradle for example). Originally, tuprolog doesn't include version in its jar, I manually change the jar file into tuprolog-version.jar.
+* [tuprolog](http://tuprolog.alice.unibo.it) is not available in Maven repository, so you have to grab them manually and then put the jar inside lib dir (see build.gradle for example). Originally, tuprolog doesn't include version in its jar, I manually change the jar file into tuprolog-version.jar.

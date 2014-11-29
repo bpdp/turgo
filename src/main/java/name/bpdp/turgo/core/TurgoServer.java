@@ -25,23 +25,17 @@ public class TurgoServer {
     private final int port;
 
     public TurgoServer(int port) {
-		
         this.port = port;
-		
     }
 
     public void run() throws Exception {
 
         HttpServer httpServer = new HttpServer();
-        
         NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
-		
         httpServer.addListener(networkListener);
-        
-	httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
+	    httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
     
             final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-            
             @Override
             public void service(Request request, Response response) throws Exception {
 
@@ -52,22 +46,18 @@ public class TurgoServer {
                     formattedTime = formatter.format(now);
                 }
 
-		response.setContentType("text/plain");
-		response.getWriter().write(formattedTime);
+		        response.setContentType("text/plain");
+		        response.getWriter().write(formattedTime);
 	
             }
 	
         }, "/time");
 
         try {
-
             httpServer.start();
             Thread.currentThread().join();
-
         } catch (Exception e) {
-
             System.err.println(e);
-
         }
 
     }

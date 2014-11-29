@@ -7,7 +7,7 @@ sourceCompatibility = '1.8'
 repositories {
 
     flatDir {
-        dirs 'libs'
+        dirs 'lib'
     }
 
     mavenLocal()
@@ -17,17 +17,14 @@ repositories {
     // Read more about repositories here:
     //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
 
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url "http://fortytwo.net/maven2" }
+    //maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    //maven { url "http://fortytwo.net/maven2" }
 
     // maven repo for BigData - as embedded RDF database
     // we are looking for BigData with Blueprints also
     // needed by BigData: nxparser
     maven { url "http://nxparser.googlecode.com/svn/repository" }
     maven { url "http://www.systap.com/maven/releases" }
-
-    // maven repo for Jade
-    //maven { url "http://jade.tilab.com/maven/" }
 
 }
 
@@ -37,28 +34,25 @@ dependencies {
     //  testCompile => for test time deps
     //  provided => assumed to be provided by users
 
-    // grizzly, I put all http component here
-    compile group: 'org.glassfish.grizzly', name: 'grizzly-http-all', version: '2.3.14'
-
+    // grizzly, I put all http and SPDY/3 components here
+    compile 'org.glassfish.grizzly:grizzly-http-all:2.3.17'
+    compile 'org.glassfish.grizzly:grizzly-npn-bootstrap:1.1'
+    compile 'org.glassfish.grizzly:grizzly-spdy:2.3.17'
     // jersey - RESTful Web API, with grizzly integration
     // // used as the door for communication with software agent
-    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.10.1'
+    compile 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.13'
 
-    compile group: 'javax.json', name: 'javax.json-api', version: '1.0'
+    compile 'javax.json:javax.json-api:1.0'
 
-    compile group: 'org.thymeleaf', name: 'thymeleaf', version: '2.1.3.RELEASE'
+    compile 'org.thymeleaf:thymeleaf:2.1.3.RELEASE'
     
-    // Blueprints
-    compile group: 'com.tinkerpop.blueprints', name: 'blueprints-core', version: '2.5.0'
-    compile group: 'com.tinkerpop.blueprints', name: 'blueprints-sail-graph', version: '2.5.0'
-    compile group: 'com.tinkerpop.blueprints', name: 'blueprints-graph-sail', version: '2.5.0'
+    // bigdata
+    compile group: 'com.bigdata', name: 'bigdata', version: '1.4.0'
 
-    compile group: 'com.bigdata', name: 'bigdata', version: '1.3.1'
+    // this one in 'lib' dir
+    compile name: 'tuprolog-2.9.1'
 
-    compile name: 'tuprolog-2.9.0'
-
-    //  You can read more about how to add dependency here:
-    //  http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependenciestestCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'junit:junit:4.11'
 
 }
 

@@ -5,7 +5,7 @@ Contents
 --------
 * Introduction
 	*	The Pragmatic Web System
-	*	The Pragmatic Web Architecture
+	*	Architecture of Pragmatic Web Application
 * Pragmatic Web Application Development
 	*	Getting Started
 	*	Complete Features

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openrdf.sesame:sesame-runtime:2.6.10">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openrdf/sesame/sesame-runtime/2.6.10/sesame-runtime-2.6.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

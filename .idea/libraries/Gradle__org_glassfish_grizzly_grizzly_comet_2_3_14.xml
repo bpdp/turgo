@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.grizzly:grizzly-comet:2.3.14">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.grizzly/grizzly-comet/2.3.14/66a05eef6232f4f67f8afadde786ccb50863d169/grizzly-comet-2.3.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.grizzly/grizzly-comet/2.3.14/ddf9b1807cbf5a2f023956c3ce24ac7e4a88dfeb/grizzly-comet-2.3.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

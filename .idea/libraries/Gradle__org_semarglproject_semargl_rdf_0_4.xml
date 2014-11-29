@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.semarglproject:semargl-rdf:0.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.semarglproject/semargl-rdf/0.4/dc95b6cb745ae39ed02dece735bdc406179aee3/semargl-rdf-0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.semarglproject/semargl-rdf/0.4/d7752e06b6f63049c0d62556c3801dee07a7ac86/semargl-rdf-0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

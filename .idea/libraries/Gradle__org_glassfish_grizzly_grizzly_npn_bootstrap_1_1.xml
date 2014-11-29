@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.grizzly:grizzly-npn-bootstrap:1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.grizzly/grizzly-npn-bootstrap/1.1/5e3228a6296e36354358bbfb488f1e7f3e103885/grizzly-npn-bootstrap-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.grizzly/grizzly-npn-bootstrap/1.1/695c8f4db8b79923a247c322ba6f26f89f7ef898/grizzly-npn-bootstrap-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -20,23 +20,11 @@ run {
 repositories {
 
 	flatDir {
-    	dirs 'libs'
+    	dirs 'lib'
 	}
 
     mavenLocal()
     mavenCentral()
-
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-
-    // maven repo for Prova
-    maven { url "https://prova.ws/maven2" }
-    // maven repo for Prova dependencies com.springsource.*
-    maven { url "http://repository.springsource.com/maven/bundles/release" }
-    maven { url "http://repository.springsource.com/maven/bundles/external" }
-    // maven repo for Prova dependencies: openrdf-sesame-onejar-osgi
-    maven { url "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" }
-
-		maven { url "http://fortytwo.net/maven2" }
 
     // maven repo for BigData - as embedded RDF database
     maven { url "http://nxparser.googlecode.com/svn/repository" }
@@ -45,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'name.bpdp', name: 'turgo', version: '0.0.1.Beta1'
-	compile name: 'tuprolog-2.9.0'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'name.bpdp:turgo:0.0.1.Beta1'
+	compile 'tuprolog-2.9.1'
+    testCompile 'junit:junit:4.11'
 }
