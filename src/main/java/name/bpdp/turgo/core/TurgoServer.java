@@ -28,29 +28,17 @@ public class TurgoServer {
 
     private final int port;
 
-    public TurgoServer(int port) {
-        this.port = port;
-    }
+    public TurgoServer(int port) { this.port = port; }
 
-    public void run() throws Exception {
+    public TurgoServer() { this.port = 1443; }
 
-        HttpServer httpServer = new HttpServer();
-        NetworkListener networkListener = new NetworkListener("turgo-http-listener", "localhost", this.port);
-        networkListener.setSecure(true);
+    public void runForHuman() throws Exception {
 
-        SSLContextConfigurator sslConf = new SSLContextConfigurator();
-        sslConf.setKeyStoreFile("keys/keystore_server");
-        sslConf.setKeyStorePass("asdfgh");
-        sslConf.setTrustStoreFile("keys/truststore_server");
-        sslConf.setTrustStorePass("asdfgh");
+        HttpServer humanServer = new HttpServer();
+        NetworkListener humanListener = new NetworkListener("turgo-human-http-listener", "localhost", this.port);
 
-        networkListener.setSSLEngineConfig(new SSLEngineConfigurator(sslConf));
-
-        SpdyAddOn spdyAddOn = new SpdyAddOn();
-        networkListener.registerAddOn(spdyAddOn);
-
-        httpServer.addListener(networkListener);
-	    httpServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
+        humanServer.addListener(humanListener);
+	    humanServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
     
             final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             @Override
@@ -71,7 +59,54 @@ public class TurgoServer {
         }, "/time");
 
         try {
-            httpServer.start();
+            humanServer.start();
+            Thread.currentThread().join();
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
+    }
+
+    public void runForAgent() throws Exception {
+
+        HttpServer agentServer = new HttpServer();
+        NetworkListener agentListener = new NetworkListener("turgo-agent-http-listener", "localhost", this.port);
+        agentListener.setSecure(true);
+
+        SSLContextConfigurator sslConf = new SSLContextConfigurator();
+        sslConf.setKeyStoreFile("keys/keystore_server");
+        sslConf.setKeyStorePass("asdfgh");
+        sslConf.setTrustStoreFile("keys/truststore_server");
+        sslConf.setTrustStorePass("asdfgh");
+
+        agentListener.setSSLEngineConfig(new SSLEngineConfigurator(sslConf));
+
+        SpdyAddOn spdyAddOn = new SpdyAddOn();
+        agentListener.registerAddOn(spdyAddOn);
+
+        agentServer.addListener(agentListener);
+        agentServer.getServerConfiguration().addHttpHandler(new HttpHandler() {
+
+            final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+            @Override
+            public void service(Request request, Response response) throws Exception {
+
+                final Date now = new Date();
+                final String formattedTime;
+
+                synchronized (formatter) {
+                    formattedTime = formatter.format(now);
+                }
+
+                response.setContentType("text/plain");
+                response.getWriter().write(formattedTime);
+
+            }
+
+        }, "/time");
+
+        try {
+            agentServer.start();
             Thread.currentThread().join();
         } catch (Exception e) {
             System.err.println(e);

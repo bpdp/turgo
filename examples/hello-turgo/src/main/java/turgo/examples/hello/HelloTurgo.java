@@ -5,6 +5,7 @@ import name.bpdp.turgo.core.*;
 import name.bpdp.turgo.config.*;
 
 import alice.tuprolog.*;
+import name.bpdp.turgo.core.TurgoServer;
 
 /**
  * Created by bpdp on 4/12/14.
@@ -39,7 +40,8 @@ public class HelloTurgo {
 			System.out.println("There is no conf file: conf/turgo.json");
 		}
 
-		new TurgoServer(port).run();
+		new TurgoServer(port).runForHuman();
+		new TurgoServer().runForAgent();
 
 	}
 
